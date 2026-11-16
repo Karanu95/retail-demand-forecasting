@@ -1,0 +1,230 @@
+{
+  "project": "Aggregate Retail Demand Forecasting",
+  "target": "daily total Units Sold across all stores and products",
+  "forecast_horizons_days": [
+    7,
+    30
+  ],
+  "dataset_start": "2022-01-01",
+  "dataset_end": "2024-01-01",
+  "final_holdout_start": "2023-12-03",
+  "final_holdout_end": "2024-01-01",
+  "rolling_origins": [
+    "2023-05-01",
+    "2023-05-31",
+    "2023-06-30",
+    "2023-07-30",
+    "2023-08-29",
+    "2023-09-28",
+    "2023-10-28"
+  ],
+  "selected_models": {
+    "7-Day": "Random Forest",
+    "30-Day": "Extra Trees"
+  },
+  "production_model_details": {
+    "7-Day": {
+      "type": "ml",
+      "name": "Random Forest"
+    },
+    "30-Day": {
+      "type": "ml",
+      "name": "Extra Trees"
+    }
+  },
+  "features": [
+    "DayOfWeek",
+    "Day",
+    "Month",
+    "DayOfYear",
+    "DayOfYearSin",
+    "DayOfYearCos",
+    "Lag_1",
+    "Lag_7",
+    "Lag_14",
+    "Lag_28",
+    "RollingMean_7",
+    "RollingMean_28"
+  ],
+  "rolling_validation_mean_metrics": [
+    {
+      "Horizon": "30-Day",
+      "Model": "Extra Trees",
+      "Mean_MAE": 796.3679068687451,
+      "Mean_RMSE": 994.1183387183876,
+      "Std_RMSE": 170.09333706588603,
+      "Mean_R2": -0.03959491546341752,
+      "Folds": 7
+    },
+    {
+      "Horizon": "30-Day",
+      "Model": "Random Forest",
+      "Mean_MAE": 803.2612715106497,
+      "Mean_RMSE": 995.2343701255178,
+      "Std_RMSE": 168.7065144859831,
+      "Mean_R2": -0.041654737383550695,
+      "Folds": 7
+    },
+    {
+      "Horizon": "30-Day",
+      "Model": "Historical Average",
+      "Mean_MAE": 813.0523094554966,
+      "Mean_RMSE": 1003.680969988007,
+      "Std_RMSE": 163.69948571407392,
+      "Mean_R2": -0.06288757536331237,
+      "Folds": 7
+    },
+    {
+      "Horizon": "30-Day",
+      "Model": "Ridge Regression",
+      "Mean_MAE": 816.0391155198985,
+      "Mean_RMSE": 1015.5095565578841,
+      "Std_RMSE": 165.00560512339,
+      "Mean_R2": -0.0882987840824141,
+      "Folds": 7
+    },
+    {
+      "Horizon": "30-Day",
+      "Model": "Day-of-Week Average",
+      "Mean_MAE": 826.5924083100837,
+      "Mean_RMSE": 1017.9438876197719,
+      "Std_RMSE": 156.3909787013744,
+      "Mean_R2": -0.10005514653468868,
+      "Folds": 7
+    },
+    {
+      "Horizon": "30-Day",
+      "Model": "Hist Gradient Boosting",
+      "Mean_MAE": 847.2206633829893,
+      "Mean_RMSE": 1045.2844545630348,
+      "Std_RMSE": 181.73482768713467,
+      "Mean_R2": -0.15054819341374112,
+      "Folds": 7
+    },
+    {
+      "Horizon": "30-Day",
+      "Model": "Moving Average (7-day)",
+      "Mean_MAE": 890.1074829931974,
+      "Mean_RMSE": 1099.0910564076667,
+      "Std_RMSE": 269.03868330440315,
+      "Mean_R2": -0.25778083025466725,
+      "Folds": 7
+    },
+    {
+      "Horizon": "30-Day",
+      "Model": "Seasonal Naive (7-day)",
+      "Mean_MAE": 1100.2857142857142,
+      "Mean_RMSE": 1353.0353981154014,
+      "Std_RMSE": 437.48036402795947,
+      "Mean_R2": -0.917951699062929,
+      "Folds": 7
+    },
+    {
+      "Horizon": "30-Day",
+      "Model": "Last Value",
+      "Mean_MAE": 1454.7714285714285,
+      "Mean_RMSE": 1680.1635130381342,
+      "Std_RMSE": 509.4889137689557,
+      "Mean_R2": -2.1574728085566943,
+      "Folds": 7
+    },
+    {
+      "Horizon": "7-Day",
+      "Model": "Random Forest",
+      "Mean_MAE": 755.1687629469569,
+      "Mean_RMSE": 941.6022429785147,
+      "Std_RMSE": 267.23066246465385,
+      "Mean_R2": -0.2274285054783761,
+      "Folds": 7
+    },
+    {
+      "Horizon": "7-Day",
+      "Model": "Extra Trees",
+      "Mean_MAE": 748.1382212923642,
+      "Mean_RMSE": 942.2768696364035,
+      "Std_RMSE": 265.5654439944995,
+      "Mean_R2": -0.22480351889792513,
+      "Folds": 7
+    },
+    {
+      "Horizon": "7-Day",
+      "Model": "Ridge Regression",
+      "Mean_MAE": 764.0229824670039,
+      "Mean_RMSE": 944.7679111308046,
+      "Std_RMSE": 269.9796529215348,
+      "Mean_R2": -0.24010962935754465,
+      "Folds": 7
+    },
+    {
+      "Horizon": "7-Day",
+      "Model": "Historical Average",
+      "Mean_MAE": 774.7307117004732,
+      "Mean_RMSE": 955.3670616517403,
+      "Std_RMSE": 267.2205234189948,
+      "Mean_R2": -0.27796166298206165,
+      "Folds": 7
+    },
+    {
+      "Horizon": "7-Day",
+      "Model": "Hist Gradient Boosting",
+      "Mean_MAE": 772.8277733256689,
+      "Mean_RMSE": 956.3496555250291,
+      "Std_RMSE": 316.5345310385033,
+      "Mean_R2": -0.26462229996028375,
+      "Folds": 7
+    },
+    {
+      "Horizon": "7-Day",
+      "Model": "Day-of-Week Average",
+      "Mean_MAE": 800.5604643874929,
+      "Mean_RMSE": 972.4247485389544,
+      "Std_RMSE": 238.18615301010803,
+      "Mean_R2": -0.3418886330565991,
+      "Folds": 7
+    },
+    {
+      "Horizon": "7-Day",
+      "Model": "Moving Average (7-day)",
+      "Mean_MAE": 852.3002915451895,
+      "Mean_RMSE": 1068.4708497758609,
+      "Std_RMSE": 406.35187915834564,
+      "Mean_R2": -0.7667629538041165,
+      "Folds": 7
+    },
+    {
+      "Horizon": "7-Day",
+      "Model": "Seasonal Naive (7-day)",
+      "Mean_MAE": 1040.061224489796,
+      "Mean_RMSE": 1280.742040482106,
+      "Std_RMSE": 487.14709965131374,
+      "Mean_R2": -1.5547720539681669,
+      "Folds": 7
+    },
+    {
+      "Horizon": "7-Day",
+      "Model": "Last Value",
+      "Mean_MAE": 1440.2244897959183,
+      "Mean_RMSE": 1660.9773359095182,
+      "Std_RMSE": 661.0328712767301,
+      "Mean_R2": -3.485536547724833,
+      "Folds": 7
+    }
+  ],
+  "previously_inspected_holdout_metrics": [
+    {
+      "Horizon": "7-Day",
+      "Selected Model": "Random Forest",
+      "MAE": 841.9405995347739,
+      "RMSE": 1077.4993558151643,
+      "R2": 0.06352659983334208
+    },
+    {
+      "Horizon": "30-Day",
+      "Selected Model": "Extra Trees",
+      "MAE": 949.0927942227889,
+      "RMSE": 1232.3007540273388,
+      "R2": 0.002022392432411979
+    }
+  ],
+  "caveat": "Final holdout was previously inspected in Stage 3 and Stage 3.5; it is a re-check, not a pristine test."
+}
